@@ -5,8 +5,7 @@ import time
 
 import torch
 
-import apache_beam as beam
-from apache_beam.options.pipeline_options import PipelineOptions
+
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import pulsar
 # Model loading function

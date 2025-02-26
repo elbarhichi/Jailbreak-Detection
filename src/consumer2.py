@@ -5,7 +5,7 @@ client = pulsar.Client('pulsar://localhost:6650')
 
 # Souscrivez au topic "chatbot-inference" dans le namespace public/default
 # "my-subscription" est le nom de la souscription ; vous pouvez le changer ou en créer un nouveau pour lire depuis le début.
-consumer = client.subscribe('persistent://public/default/chatbot-inference', 'my-subscription2', initial_position=pulsar.InitialPosition.Earliest)
+consumer = client.subscribe('persistent://public/default/chatbot-inference', 'my-subscription2222', initial_position=pulsar.InitialPosition.Earliest)
 
 print("Le consumer est en attente de messages...")
 
