@@ -169,3 +169,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+wandb/
+deberta_logs/
+deberta_results/
