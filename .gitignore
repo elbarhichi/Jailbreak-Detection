@@ -172,3 +172,6 @@ cython_debug/
 wandb/
 deberta_logs/
 deberta_results/
+saved_models/bert/
+logs/
+results/
