@@ -1,3 +1,6 @@
 pulsar-client
 flask
 requests
+torch
+transformers
+datasets
