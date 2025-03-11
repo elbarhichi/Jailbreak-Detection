@@ -16,7 +16,7 @@ def classify_message(model, tokenizer, text):
     return label, confidence
 
 
-model_save_path = "./saved_models/albert"
+model_save_path = "Jailbreak-Detection/saved_models/albert"
 tokenizer = AutoTokenizer.from_pretrained(model_save_path)
 model = AutoModelForSequenceClassification.from_pretrained(model_save_path)
 

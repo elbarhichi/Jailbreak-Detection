@@ -1,18 +1,16 @@
 import requests
 import json
 import time
+import pandas as pd
 
 # URL de votre gateway Flask
 url = "http://localhost:5000/send"
 
 # Liste de messages à envoyer
-messages = [
-    "Message 111",
-    "Message 22",
-    "Message 33",
-    "Message 4",
-    "Message 5"
-]
+
+df = pd.read_csv('test.csv')
+messages = df['prompt'].tolist()
+
 
 for msg in messages:
 
