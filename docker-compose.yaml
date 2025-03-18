@@ -1,0 +1,56 @@
+services:
+  pulsar:
+    image: apachepulsar/pulsar:4.0.3
+    command: ["bin/pulsar", "standalone"]
+    ports:
+      - "6650:6650"   
+      - "8080:8080" 
+
+# blan microservices
+# blan dial contenaire pulsar kaytlancapar contre l creation dial broker mazal makatkon tfinishat,
+# healthcheck no, then waitfor_it.sh
+
+  producer:
+    build: ./producer
+    depends_on:
+      - pulsar
+    environment:
+      - PULSAR_SERVICE_URL=pulsar://pulsar:6650
+    ports:
+      - "5000:5000"
+    command: ["python", "producer.py"]
+
+  consumer_prediction:
+    build: ./consumer_prediction
+    depends_on:
+      - pulsar
+    environment:
+      - PULSAR_SERVICE_URL=pulsar://pulsar:6650
+    volumes:
+      - ./saved_models/albert:/app/model/albert
+    command: ["python", "consumer_prediction.py"]
+
+
+
+  consumer_join:
+    build: ./consumer_join
+    depends_on:
+      - pulsar
+    environment:
+      - PULSAR_SERVICE_URL=pulsar://pulsar:6650
+    command: ["python", "consumer_join.py"]
+
+
+  gateway:
+    build: ./gateway
+    depends_on:
+      - pulsar
+      - producer
+      - consumer_prediction
+      - consumer_join
+    environment:
+      - GATEWAY_URL=http://producer:5000/send
+    volumes:
+      - ./test.csv:/app/test.csv
+    command: ["python", "gateway.py"]
+
