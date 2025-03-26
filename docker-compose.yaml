@@ -8,10 +8,6 @@ services:
       - "6650:6650"   
       - "8080:8080" 
 
-# blan microservices
-# blan dial contenaire pulsar kaytlancapar contre l creation dial broker mazal makatkon tfinishat,
-# healthcheck no, then waitfor_it.sh
-
   producer:
     build: ./producer
     depends_on:
