@@ -29,9 +29,10 @@ services:
     environment:
       - PULSAR_SERVICE_URL=pulsar://pulsar:6650
     volumes:
-      - ./saved_models/albert:/app/model/albert
+      - ./saved_models/albert_production:/app/model/albert
     command: ["python", "consumer_prediction.py"]
-
+    
+    mem_limit: 5g
 
 
   consumer_join:

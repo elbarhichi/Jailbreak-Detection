@@ -28,8 +28,11 @@ def classify_message(model, tokenizer, text):
     confidence = torch.softmax(outputs.logits, dim=-1)[0][prediction].item()
     return label, confidence
 
+
+
 # Bloc de test si on exécute directement ce module
 if __name__ == '__main__':
+    #MODEL_SAVE_PATH = "saved_models/albert"
     model, tokenizer = load_model()
     message_text = "This is a benign app"
     label, confidence = classify_message(model, tokenizer, message_text)

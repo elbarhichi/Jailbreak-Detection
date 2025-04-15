@@ -31,6 +31,7 @@ class ReadStorageForJoinDoFn(beam.DoFn):
                 print("Aucun message Storage reçu sur ce tick.")
         except Timeout:
             return
+ 
 
     def teardown(self):
         self.client.close()
@@ -103,7 +104,7 @@ def run():
         def process_join(element):
             key, grouped = element
             storage_messages = grouped['storage']
-            predictions_list = grouped['predictions']
+            predictions_list = grouped['classification']
             result = {
                 'id': key,
                 'message': storage_messages[0] if storage_messages else None,
