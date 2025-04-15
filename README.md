@@ -20,7 +20,7 @@ L’objectif est de détecter en temps réel les tentatives de contournement des
 ```
 2. Dans un second terminal, lancez la passerelle (gateway) :
 
-``bash
+```bash
   docker compose -f 'Jailbreak-Detection/docker-compose.yaml' up -d --build gateway
 ```
 ## 🔁 Mise à jour en direct du modèle (Live update modèle)
@@ -36,7 +36,7 @@ Le file watcher détecte ce changement automatiquement.
 Le modèle est alors rechargé dynamiquement avec les nouveaux poids.
 
 Exemple :
-``bash
+```bash
   cp nouveaux_poids.safetensor production/poids.safetensor
 ```
 ## 👥 Auteurs
