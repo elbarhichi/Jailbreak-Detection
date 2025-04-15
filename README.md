@@ -16,13 +16,13 @@ L’objectif est de détecter en temps réel les tentatives de contournement des
 1. Dans un premier terminal, lancez Pulsar :
 
 ```bash
-docker compose -f 'Jailbreak-Detection/docker-compose.yaml' up -d --build pulsar
-
+  docker compose -f 'Jailbreak-Detection/docker-compose.yaml' up -d --build pulsar
+```
 2. Dans un second terminal, lancez la passerelle (gateway) :
 
 ``bash
-docker compose -f 'Jailbreak-Detection/docker-compose.yaml' up -d --build gateway
-
+  docker compose -f 'Jailbreak-Detection/docker-compose.yaml' up -d --build gateway
+```
 ## 🔁 Mise à jour en direct du modèle (Live update modèle)
 Le système permet de mettre à jour les poids du modèle en direct, sans redémarrage manuel.
 
@@ -37,8 +37,8 @@ Le modèle est alors rechargé dynamiquement avec les nouveaux poids.
 
 Exemple :
 ``bash
-cp nouveaux_poids.safetensor production/poids.safetensor
-
+  cp nouveaux_poids.safetensor production/poids.safetensor
+```
 ## 👥 Auteurs
 Projet réalisé dans le cadre du cours INFONUM à CentraleSupélec.
 
