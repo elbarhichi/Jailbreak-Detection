@@ -1,5 +1,12 @@
 # Pipeline de Détection de Messages de Jailbreak
 
+
+<div align="center">
+  <img alt="Demo" src="./overall_structure.png" />
+</div> 
+
+<br/>
+
 Ce projet est une pipeline de détection de messages de **Jailbreak** utilisant **Apache Pulsar** et **Beam ML**, développée dans le cadre du projet **INFONUM** à **CentraleSupélec**.
 
 L’objectif est de détecter en temps réel les tentatives de contournement des garde-fous dans des interactions avec des modèles de langage.
